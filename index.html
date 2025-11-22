@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="soft-stone">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Theme Switcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">🎨 Aesthetic Themes</h1>
+            <div class="theme-selector">
+                <label for="theme-dropdown" class="sr-only">Select Theme</label>
+                <select id="theme-dropdown" class="theme-dropdown">
+                    <option value="soft-stone">Soft Stone</option>
+                    <option value="rose-quartz">Rose Quartz</option>
+                    <option value="midnight-violet">Midnight Violet</option>
+                    <option value="coffee-cream">Coffee Cream</option>
+                    <option value="forest-calm">Forest Calm</option>
+                    <option value="cyber-neon">Cyber Neon</option>
+                    <option value="custom">Custom Theme</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Theme Preview Carousel -->
+        <section class="preview-section" aria-label="Theme Preview Carousel">
+            <h2>Preview All Themes</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Previous theme">‹</button>
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Theme previews will be injected by JS -->
+                </div>
+                <button class="carousel-btn next" aria-label="Next theme">›</button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </section>
+
+        <!-- Hex Values Display -->
+        <section class="hex-display" aria-label="Current Theme Colors">
+            <h2>Current Theme Palette</h2>
+            <div class="hex-grid" id="hex-grid">
+                <!-- Hex values will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Component Library Showcase -->
+        <section class="components-section" aria-label="Component Library">
+            <h2>Component Library</h2>
+
+            <!-- Buttons -->
+            <div class="component-group">
+                <h3>Buttons</h3>
+                <div class="button-showcase">
+                    <button class="btn btn-primary">Primary</button>
+                    <button class="btn btn-secondary">Secondary</button>
+                    <button class="btn btn-outline">Outline</button>
+                    <button class="btn btn-ghost">Ghost</button>
+                    <button class="btn btn-primary" disabled>Disabled</button>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="component-group">
+                <h3>Cards</h3>
+                <div class="card-showcase">
+                    <article class="card">
+                        <div class="card-header">
+                            <span class="card-icon">✨</span>
+                            <h4>Basic Card</h4>
+                        </div>
+                        <p class="card-body">A simple card component with header and body content.</p>
+                        <div class="card-footer">
+                            <button class="btn btn-ghost">Cancel</button>
+                            <button class="btn btn-primary">Action</button>
+                        </div>
+                    </article>
+                    <article class="card card-elevated">
+                        <div class="card-header">
+                            <span class="card-icon">🚀</span>
+                            <h4>Elevated Card</h4>
+                        </div>
+                        <p class="card-body">An elevated card with more prominent shadow.</p>
+                        <div class="card-footer">
+                            <button class="btn btn-secondary">Learn More</button>
+                        </div>
+                    </article>
+                    <article class="card card-interactive">
+                        <div class="card-header">
+                            <span class="card-icon">💡</span>
+                            <h4>Interactive Card</h4>
+                        </div>
+                        <p class="card-body">Hover over me! I have interactive animations.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Inputs -->
+            <div class="component-group">
+                <h3>Form Inputs</h3>
+                <div class="input-showcase">
+                    <div class="input-group">
+                        <label for="text-input">Text Input</label>
+                        <input type="text" id="text-input" class="input" placeholder="Enter text...">
+                    </div>
+                    <div class="input-group">
+                        <label for="search-input">Search Input</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">🔍</span>
+                            <input type="search" id="search-input" class="input" placeholder="Search...">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="textarea-input">Textarea</label>
+                        <textarea id="textarea-input" class="input textarea" placeholder="Write something..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-custom"></span>
+                            Checkbox Option
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" class="toggle-input">
+                            <span class="toggle-switch"></span>
+                            Toggle Switch
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Theme Generator -->
+        <section class="generator-section" aria-label="Custom Theme Generator">
+            <h2>Create Your Theme</h2>
+            <p class="generator-description">Customize colors and create your own unique theme!</p>
+
+            <div class="generator-grid">
+                <div class="color-picker-group">
+                    <label for="custom-bg">Background</label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="custom-bg" value="#f5f5f5">
+                        <input type="text" class="hex-input" id="custom-bg-hex" value="#f5f5f5">
+                    </div>
+                </div>
+                <div class="color-picker-group">
+                    <label for="custom-surface">Surface</label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="custom-surface" value="#ffffff">
+                        <input type="text" class="hex-input" id="custom-surface-hex" value="#ffffff">
+                    </div>
+                </div>
+                <div class="color-picker-group">
+                    <label for="custom-primary">Primary</label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="custom-primary" value="#6b7280">
+                        <input type="text" class="hex-input" id="custom-primary-hex" value="#6b7280">
+                    </div>
+                </div>
+                <div class="color-picker-group">
+                    <label for="custom-secondary">Secondary</label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="custom-secondary" value="#9ca3af">
+                        <input type="text" class="hex-input" id="custom-secondary-hex" value="#9ca3af">
+                    </div>
+                </div>
+                <div class="color-picker-group">
+                    <label for="custom-accent">Accent</label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="custom-accent" value="#4b5563">
+                        <input type="text" class="hex-input" id="custom-accent-hex" value="#4b5563">
+                    </div>
+                </div>
+                <div class="color-picker-group">
+                    <label for="custom-text">Text</label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="custom-text" value="#1f2937">
+                        <input type="text" class="hex-input" id="custom-text-hex" value="#1f2937">
+                    </div>
+                </div>
+            </div>
+
+            <div class="generator-actions">
+                <button class="btn btn-secondary" id="reset-custom">Reset</button>
+                <button class="btn btn-primary" id="apply-custom">Apply Custom Theme</button>
+                <button class="btn btn-outline" id="save-custom">Save to Library</button>
+            </div>
+
+            <!-- Accessibility Check -->
+            <div class="contrast-checker" id="contrast-checker">
+                <h3>Accessibility Check</h3>
+                <div class="contrast-results" id="contrast-results">
+                    <!-- Contrast results will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with 💜 using CSS Variables, DOM Manipulation & localStorage</p>
+            <div class="footer-badges">
+                <span class="badge">CSS Variables</span>
+                <span class="badge">localStorage</span>
+                <span class="badge">Accessibility</span>
+                <span class="badge">Custom Themes</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
