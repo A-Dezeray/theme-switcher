@@ -1111,9 +1111,6 @@ section h3 {
    ======================================== */
 
 .generator-layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: var(--space-7);
     margin-bottom: var(--space-7);
 }
 
@@ -1262,8 +1259,7 @@ section h3 {
    ======================================== */
 
 .live-preview {
-    position: sticky;
-    top: var(--space-7);
+    margin-top: var(--space-7);
 }
 
 .live-preview h3 {
@@ -1659,10 +1655,6 @@ section h3 {
     }
 
     .card-showcase {
-        grid-template-columns: 1fr;
-    }
-
-    .generator-layout {
         grid-template-columns: 1fr;
     }
 
